@@ -16,26 +16,23 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="levels")
+@Table(name = "levels")
 public class Levels {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int Id;
-	
-	
-	
-	@Column(name="level_category")
+
+	@Column(name = "level_category")
 	private String levelCategory;
-	
-	 @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	 @JoinColumn(name="l_id", referencedColumnName="id")
-	 private Category category;
-	 
-	 @OneToMany(mappedBy = "level",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
-	 private List<Questions> questionsItem = new ArrayList<Questions>();
-	 
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "l_id", referencedColumnName = "id")
+	private Category category;
+
+	@OneToMany(mappedBy = "level", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Questions> questionsItem = new ArrayList<Questions>();
 
 	public List<Questions> getQuestionsItem() {
 		return questionsItem;
@@ -68,6 +65,5 @@ public class Levels {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	 
 
 }
