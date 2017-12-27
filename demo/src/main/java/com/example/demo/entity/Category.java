@@ -1,6 +1,9 @@
 package com.example.demo.entity;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +17,19 @@ public class Category {
 	
 	@Column(name="category")
 	private String Category;
+	
+	
+	@OneToMany(mappedBy = "category",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	private List<Levels> items = new ArrayList<Levels>();
+	
+
+	public List<Levels> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Levels> items) {
+		this.items = items;
+	}
 
 	public int getId() {
 		return Id;
