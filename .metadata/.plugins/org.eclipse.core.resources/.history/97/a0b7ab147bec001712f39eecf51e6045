@@ -1,0 +1,44 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.AdminLogin;
+import com.example.demo.entity.Category;
+import com.example.demo.entity.Questions;
+import com.example.demo.repository.AdminRepository;
+import com.example.demo.repository.CategoryRepository;
+
+@Service("dao")
+public class Impl implements Inter {
+
+	@Autowired
+	AdminRepository adminrepo;
+
+	@Autowired
+	CategoryRepository repo;
+
+	@Override
+	public List<AdminLogin> getAdminDetails(String val) {
+		return adminrepo.findbyData(val);
+	}
+
+	@Override
+	public List<Category> saveData(int id) {
+		return repo.findData(id);
+	}
+
+	@Override
+	public List<Category> findCategory() {
+		return repo.findAll();
+	}
+
+	@Override
+	public List<Questions> findLevel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
