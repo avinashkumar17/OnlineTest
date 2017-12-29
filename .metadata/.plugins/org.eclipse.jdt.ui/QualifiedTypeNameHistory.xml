@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.example.demo.entity.Category"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<<<<<<< HEAD
+<fullyQualifiedTypeName name="com.example.demo.entity.Category"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+=======
 <fullyQualifiedTypeName name="javax.persistence.Transient"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
 <fullyQualifiedTypeName name="scala.native"/>
@@ -15,9 +20,13 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.entity.Questions"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="com.example.demo.repository.QuestionRepository"/>
 <fullyQualifiedTypeName name="com.example.demo.entity.Levels"/>
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+=======
+>>>>>>> e4e8fdefd1c1bbe1aaf6ecac380b95378c9dc674
+>>>>>>> 79a3f0cddd7771442ae60b76eb9381c394217a5f
 </qualifiedTypeNameHistroy>
