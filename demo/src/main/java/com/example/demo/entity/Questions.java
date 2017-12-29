@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "questions")
 public class Questions {
@@ -21,6 +23,7 @@ public class Questions {
 	private String choice_c;
 	private String choice_d;
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "q_id", referencedColumnName = "id")
 	private Levels level;
