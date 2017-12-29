@@ -5,7 +5,145 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-12-27T02:30:15Z</updated>
+  <updated>2017-12-28T00:25:49Z</updated>
+  <entry>
+    <title>Spring Cloud Dalston.SR5 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/12/28/spring-cloud-dalston-sr5-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Ryan Baxter</name>
+    </author>
+    <id>tag:spring.io,2017-12-27:3132</id>
+    <updated>2017-12-28T00:25:49Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Service Release 5 (SR5) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Dalston&lt;/a&gt; Release Train is available today. The release can be found in &lt;a href="http://repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-dependencies/Dalston.SR5/"&gt;Maven Central&lt;/a&gt;. You can check out the Dalston &lt;a href="https://github.com/spring-projects/spring-cloud/wiki/Spring-Cloud-Dalston-Release-Notes"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-the-dalston-release-train" class="anchor" name="notable-changes-in-the-dalston-release-train"&gt;&lt;/a&gt;Notable Changes in the Dalston Release Train&lt;/h2&gt;&lt;h3&gt;&lt;a href="#spring-cloud-contract" class="anchor" name="spring-cloud-contract"&gt;&lt;/a&gt;Spring Cloud Contract&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-contract/milestone/22?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-cloudfoundry" class="anchor" name="spring-cloud-cloudfoundry"&gt;&lt;/a&gt;Spring Cloud Cloudfoundry&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-cloudfoundry/milestone/7?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-sleuth" class="anchor" name="spring-cloud-sleuth"&gt;&lt;/a&gt;Spring Cloud Sleuth&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-sleuth/milestone/35?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-consul" class="anchor" name="spring-cloud-consul"&gt;&lt;/a&gt;Spring Cloud Consul&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-consul/milestone/24?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-config" class="anchor" name="spring-cloud-config"&gt;&lt;/a&gt;Spring Cloud Config&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-config/milestone/38?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-zookeeper" class="anchor" name="spring-cloud-zookeeper"&gt;&lt;/a&gt;Spring Cloud Zookeeper&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-zookeeper/milestone/16?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-netflix" class="anchor" name="spring-cloud-netflix"&gt;&lt;/a&gt;Spring Cloud Netflix&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-netflix/milestone/51?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;&lt;a href="#spring-cloud-commons" class="anchor" name="spring-cloud-commons"&gt;&lt;/a&gt;Spring Cloud Commons&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-commons/milestone/35?closed=1"&gt;Bug Fixes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The following modules were updated as part of Dalston.SR5:&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Module &lt;/th&gt;
+      &lt;th&gt;Version &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Contract &lt;/td&gt;
+      &lt;td&gt;1.1.5.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Cloudfoundry &lt;/td&gt;
+      &lt;td&gt;1.1.1.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Task &lt;/td&gt;
+      &lt;td&gt;1.1.2.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Sleuth &lt;/td&gt;
+      &lt;td&gt;1.2.6.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Consul &lt;/td&gt;
+      &lt;td&gt;1.2.3.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Stream &lt;/td&gt;
+      &lt;td&gt;Chelsea.SR2 &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Aws &lt;/td&gt;
+      &lt;td&gt;1.2.1.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Security &lt;/td&gt;
+      &lt;td&gt;1.2.1.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Bus &lt;/td&gt;
+      &lt;td&gt;1.3.1.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Config &lt;/td&gt;
+      &lt;td&gt;1.3.4.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Zookeeper &lt;/td&gt;
+      &lt;td&gt;1.1.3.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Netflix &lt;/td&gt;
+      &lt;td&gt;1.3.6.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Vault &lt;/td&gt;
+      &lt;td&gt;1.0.2.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Cloud Commons &lt;/td&gt;
+      &lt;td&gt;1.2.5.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Spring Boot &lt;/td&gt;
+      &lt;td&gt;1.5.9.RELEASE &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As always, we welcome feedback on &lt;a href="https://github.com/spring-cloud/"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;Gitter&lt;/a&gt;, on &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloud"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started with Maven with a BOM (dependency management only):&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&lt;br/&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;Dalston.SR5&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-config&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+        &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+        &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+    ...&#xD;
+&amp;lt;/dependencies&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or with Gradle:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;buildscript {&#xD;
+    dependencies {&#xD;
+        classpath &amp;quot;io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE&amp;quot;&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+apply plugin: &amp;quot;io.spring.dependency-management&amp;quot;&#xD;
+&#xD;
+dependencyManagement {&#xD;
+    imports {&#xD;
+        mavenBom &amp;#39;org.springframework.cloud:spring-cloud-dependencies:Dalston.SR5&amp;#39;&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+dependencies {&#xD;
+    compile &amp;#39;org.springframework.cloud:spring-cloud-starter-config&amp;#39;&#xD;
+    compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-client&amp;#39;&#xD;
+    ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;</content>
+  </entry>
   <entry>
     <title>This Year in Spring - 2017</title>
     <link rel="alternate" href="https://spring.io/blog/2017/12/27/this-year-in-spring-2017" />
@@ -14,15 +152,15 @@
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2017-12-27:3133</id>
-    <updated>2017-12-27T02:30:15Z</updated>
+    <updated>2017-12-27T02:30:00Z</updated>
     <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another, albeit very special, installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This is the last installment before 2018 and so we&amp;rsquo;ll take the opportunity to review, as we always do in the last installment of the year, this very exciting year in Spring and its ecosystem.&lt;/p&gt;
 &lt;p&gt;Let me, on behalf of the Spring and larger Pivotal team, to be the first to wish you and yours a heartfelt happy and safe New Year! Let&amp;rsquo;s first look at some of the major trends that defined 2017. We&amp;rsquo;ve got a lot to cover!&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Spring Framework 5 and Reactive Programming&lt;/em&gt; - this year we released Spring Framework 5.0. This release is &lt;em&gt;huge&lt;/em&gt; - packed to the gills with new features including support for Java EE 8, Java SE 9 and - of course - reactive programming based on Project Reactor and the fully-reactive new web runtime called Spring WebFlux. The web runtime supports a Spring MVC-like component model as well as a new handler model (called functional reactive endpoints) and a new, fully reactive HTTP client called &lt;code&gt;WebClient&lt;/code&gt;. Spring Framework 5&amp;rsquo;s reactive support, as impressive as it is, is only the beginning. Spring Framework 5.0 is the foundation for reactive data access support in Spring Data Kay, for reactive security integration in Spring Security 5.0 and for reactive messaging in Spring Cloud Stream. All of these will bubble up to Spring Boot 2.0 which in turn lays the foundation for Spring Cloud Finchley. Both will debut in GA form in 2018. The release of our reactive programming support dovetails nicely with our first-class Kotlin support which debuted in Spring Framework 5 and has extended to a handful of other projects, notably the brand new Spring Cloud Gateway project which will also debut in Spring Cloud Finchley.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;PCF 2.0&lt;/em&gt; - &lt;a href="https://content.pivotal.io/blog/achieving-escape-velocity-with-pivotal-cloud-foundry-2-0"&gt;Pivotal Cloud Foundry 2.0 has been released!&lt;/a&gt;. This is a big release for us. It marks an important fork in the road. We envision PCF as being a universal cloud that supports functions/serverless, containers and higher order applications. We&amp;rsquo;ll support serverless and functions using &lt;a href="http://projectriff.io"&gt;Project Riff&lt;/a&gt; in what we&amp;rsquo;re calling &lt;em&gt;Pivotal Function Service&lt;/em&gt; (PFS). We support containers - ideal for stateful workloads like Apache Spark or ElasticSearch - in the Pivotal Kubernetes Service (PKS). We support stateless, 12-factor applications using &lt;em&gt;Pivotal Application Service&lt;/em&gt; (PAS). I love &lt;a href="https://www.youtube.com/watch?v=_uB5bBsMZIk&amp;list=PLgGXSWYM2FpNsGhB97BHwYJ3IawAB6ocD"&gt;this look at PCF 2.0 from CTO Onsi Fakhouri&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;PCF 2.0&lt;/em&gt; - &lt;a href="https://content.pivotal.io/blog/achieving-escape-velocity-with-pivotal-cloud-foundry-2-0"&gt;Pivotal Cloud Foundry 2.0 has been released!&lt;/a&gt;. This is a big release for us. It marks an important fork in the road. We envision PCF as being a universal cloud that supports functions/serverless, containers and higher order applications. We&amp;rsquo;ll support serverless and functions using &lt;a href="http://projectriff.io"&gt;Project Riff&lt;/a&gt; in what we&amp;rsquo;re calling &lt;em&gt;Pivotal Function Service&lt;/em&gt; (PFS). We support containers - ideal for stateful workloads like Apache Spark or ElasticSearch - in the Pivotal Container Service (PKS). We support stateless, 12-factor applications using &lt;em&gt;Pivotal Application Service&lt;/em&gt; (PAS). I love &lt;a href="https://www.youtube.com/watch?v=_uB5bBsMZIk&amp;list=PLgGXSWYM2FpNsGhB97BHwYJ3IawAB6ocD"&gt;this look at PCF 2.0 from CTO Onsi Fakhouri&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;SpringOne Platform 2017&lt;/em&gt; - this year&amp;rsquo;s developer conference was bigger and better than ever! We had close to 3,000 people turn up at this show. We had users of every stripe tell the story of their journeys to production. &lt;a href="https://www.youtube.com/watch?v=_uB5bBsMZIk&amp;list=PLgGXSWYM2FpNsGhB97BHwYJ3IawAB6ocD"&gt;Check out all the technical talks and testimonials from the SpringOne Platform 2017 YouTube playlist where you&amp;rsquo;ll find hundreds of videos for your binge-watching enjoyment&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;Functions-as-a-service or serverless&lt;/em&gt; - this year saw us enter the serverless fray in earnest, first &lt;a href="https://spring.io/blog/2017/07/05/introducing-spring-cloud-function"&gt;with Spring Cloud Function&lt;/a&gt; and then &lt;a href="https://projectriff.io/"&gt;Project Riff&lt;/a&gt; which will underpin the Pivotal Function Service in Pivotal Cloud Foundry 2.0.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Pivotal Kubernetes Service&lt;/em&gt; - we knew last year that when we announced, in cooperation with Google, the support for managing Kubernetes using BOSH as part &lt;a href="https://pivotal.io/partners/kubo"&gt;of Project Kubo&lt;/a&gt;, that it would resonate. This year we&amp;rsquo;ve seen &lt;a href="https://pivotal.io/platform/pivotal-container-service"&gt;that partnership and growth skyrocket&lt;/a&gt; as the Pivotal Container Service (PKS).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Pivotal Container Service (PKS)&lt;/em&gt; - we knew last year that when we announced, in cooperation with Google, the support for managing Kubernetes using BOSH as part &lt;a href="https://pivotal.io/partners/kubo"&gt;of Project Kubo&lt;/a&gt;, that it would resonate. This year we&amp;rsquo;ve seen &lt;a href="https://pivotal.io/platform/pivotal-container-service"&gt;that partnership and growth skyrocket&lt;/a&gt; as the Pivotal Container Service (PKS).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And now, let&amp;rsquo;s run through some of the happenings in this last week of 2017! &lt;/p&gt;
 &lt;ul&gt;
@@ -1068,18 +1206,5 @@ Please, &lt;a href="https://springoneplatform.io/sessions/spring-integration-5-0
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Cloud Gateway</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/11/29/spring-tips-spring-cloud-gateway" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-11-28:3107</id>
-    <updated>2017-11-29T00:18:00Z</updated>
-    <content type="html">&lt;p&gt;Speaker: &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Hi Spring fans! In this installment of Spring Tips we&amp;rsquo;ll look at the new API gateway project, Spring Cloud Gateway, to support edge service requirements like rate limiting, circuit breakers, proxying, and more.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/TwVtlNX-2Hs" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
