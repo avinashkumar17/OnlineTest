@@ -7,8 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.AdminLogin;
 import com.example.demo.entity.Category;
+import com.example.demo.entity.Levels;
+import com.example.demo.entity.Questions;
 import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.QuestionRepository;
 
 @Service("dao")
 public class Impl implements Inter {
@@ -18,6 +21,9 @@ public class Impl implements Inter {
 
 	@Autowired
 	CategoryRepository repo;
+	
+	@Autowired
+	QuestionRepository questionRepo;
 
 	@Override
 	public List<AdminLogin> getAdminDetails(String val) {
@@ -32,6 +38,12 @@ public class Impl implements Inter {
 	@Override
 	public List<Category> findCategory() {
 		return repo.findAll();
+	}
+
+	@Override
+	public List<Questions> findLevel(Levels level) {
+		// TODO Auto-generated method stub
+		return questionRepo.findByLevel(level);
 	}
 
 }

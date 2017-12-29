@@ -73,7 +73,11 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.7.0</version>
 		</dependency>
-		
+	    <dependency>
+           <groupId>org.json</groupId>
+           <artifactId>json</artifactId>
+           <version>20090211</version>
+        </dependency>
 		
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -95,7 +99,8 @@
 			<artifactId>javax.mail</artifactId>
 		</dependency>
 
-		
+
+	
 	</dependencies>
 
 	<build>
