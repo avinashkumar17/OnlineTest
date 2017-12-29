@@ -16,6 +16,7 @@ package com.example.demo.controller;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
+import com.example.demo.entity.Questions;
 import com.example.demo.service.Inter;
 
 
@@ -62,20 +64,35 @@ public class MyController {
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
 	public @ResponseBody String ins(){
 		
-		Category c=new Category();
-		c.setId(1);
+		/*Category c=new Category();
+		c.setCategory("dbz8");
 		
+		List<Levels> l=new ArrayList<Levels>();
+		l.add(new Levels("goku",c));
+		l.add(new Levels("picalo",c));
+		
+		c.setItems(l);
+		
+		dao.saveData(c);*/
 		 /*Levels l=new Levels();
 		 l.setLevelCategory("level5");
 		 l.setCategory(c);
 		 */
-		 List<Levels> li=dao.insertData(c);
-		 for(Levels s:li)
-		 {
-			 System.out.println("the data is :"+s.getLevelCategory()+"/n"+s.getCategory().getCategory());
-		 }
 		
-		
+		  
+		 List<Category> t=dao.saveData(1);
+		 
+	     
+	     
+	     for(Levels h:t.get(0).getItems())
+	     {
+	    	 for(Questions q:h.getQuestionsItem())
+	    	 {
+	    		 System.out.println("the data is :"+q.getAnswer());
+	    	 }
+	     }
+	     
+		 
 		
 		
 		return "success";
