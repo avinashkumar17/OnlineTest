@@ -9,23 +9,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="questions")
+@Table(name = "questions")
 public class Questions {
-	
 
-	
 	@Id
-	private int  id;
+	private int id;
 	private String question;
 	private String answer;
 	private String choice_a;
 	private String choice_b;
 	private String choice_c;
 	private String choice_d;
-	
-	 @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	 @JoinColumn(name="q_id", referencedColumnName="id")
-	 private Levels level;
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "q_id", referencedColumnName = "id")
+	private Levels level;
 
 	public int getId() {
 		return id;
