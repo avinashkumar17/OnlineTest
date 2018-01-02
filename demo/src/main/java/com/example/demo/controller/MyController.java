@@ -19,18 +19,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-
-
-
-
-
-
-
-
-
-
-
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
@@ -115,7 +103,6 @@ public class MyController {
 			{
 				e.printStackTrace();
 			}
-			System.out.println("the data is changed");
 			System.out.println("the data is changed");
 			return new ResponseEntity<Object>(obj.toString(),null,HttpStatus.NOT_ACCEPTABLE);	
 		}
