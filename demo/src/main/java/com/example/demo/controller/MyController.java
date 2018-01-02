@@ -122,7 +122,7 @@ public class MyController {
 		}
 	}
 	
-	@RequestMapping(value = "/getLevels/{l_id}", method = RequestMethod.GET)
+	@RequestMapping(value = "getLevels/{l_id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getLevels(@PathVariable("l_id") int id, HttpServletRequest httpServletRequest){
 		String header = httpServletRequest.getHeader("Accept");
 		if(header.equalsIgnoreCase("application/json")) {

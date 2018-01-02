@@ -17,15 +17,9 @@ import com.sun.mail.handlers.handler_base;
 @EnableGlobalMethodSecurity(securedEnabled = true)
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-<<<<<<< HEAD
-	@Autowired 
-	UserDetailsService user;
-	
-=======
 	@Autowired
 	UserDetailsService user;
 
->>>>>>> c24cdbbb71dc054bb6c5095e6516c634d5bb6a99
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// TODO Auto-generated method stub
