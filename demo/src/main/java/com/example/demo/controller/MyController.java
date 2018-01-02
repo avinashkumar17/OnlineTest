@@ -69,6 +69,7 @@ public class MyController {
 	    	 for(Questions q:h.getQuestionsItem())
 	    	 {
 	    		 System.out.println("the data is :"+q.getAnswer());
+	    		 System.out.println("the data is :"+q.getAnswer());
 	    	 }
 	     }
 	     return "success";
