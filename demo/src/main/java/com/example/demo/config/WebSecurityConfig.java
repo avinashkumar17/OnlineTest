@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -18,7 +19,7 @@ import com.sun.mail.handlers.handler_base;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-	UserDetailsService user;
+	UserDetailsServiceImpl user;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -40,7 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// And filter other requests to check the presence of JWT in
 				// header
 				.addFilterBefore(new JWTAuthenticationFilter(),
-						UsernamePasswordAuthenticationFilter.class);
+						UsernamePasswordAuthenticationFilter.class)
+		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 
 	@Override

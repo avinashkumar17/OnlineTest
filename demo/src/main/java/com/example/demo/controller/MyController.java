@@ -121,8 +121,7 @@ public class MyController {
 			}
 			System.out.println("the data is changed");
 			System.out.println("the data is changed");
-			return new ResponseEntity<Object>(obj.toString(),null,HttpStatus.NOT_ACCEPTABLE);
-		
+			return new ResponseEntity<Object>(obj.toString(),null,HttpStatus.NOT_ACCEPTABLE);	
 		}
 	}
 
