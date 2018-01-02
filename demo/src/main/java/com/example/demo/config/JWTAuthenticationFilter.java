@@ -12,18 +12,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 
-public class JWTAuthenticationFilter extends  GenericFilterBean{
-	
+public class JWTAuthenticationFilter extends GenericFilterBean {
+
 	@Override
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,
 			FilterChain arg2) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		 Authentication authentication = TokenAuthenticationService
-			        .getAuthentication((HttpServletRequest)arg0);
+		Authentication authentication = TokenAuthenticationService
+				.getAuthentication((HttpServletRequest) arg0);
 
-			    SecurityContextHolder.getContext()
-			        .setAuthentication(authentication);
-			    arg2.doFilter(arg0,arg1);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		arg2.doFilter(arg0, arg1);
 	}
 
 }

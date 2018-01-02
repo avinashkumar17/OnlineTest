@@ -60,7 +60,7 @@ public class MyController {
 		return new ResponseEntity<>(l,org.springframework.http.HttpStatus.OK);			
 	}*/
 	
-	@RequestMapping(value="/insert",method=RequestMethod.GET)
+	@RequestMapping(value="insert",method=RequestMethod.GET)
 	public @ResponseBody String ins(){
 		
 		/*Category c=new Category();
@@ -90,14 +90,14 @@ public class MyController {
 	     return "success";
 	}
 	
-	@RequestMapping(value ="/getCategory", method = RequestMethod.GET)
+	@RequestMapping(value ="getCategory", method = RequestMethod.GET)
 	public ResponseEntity<List<Category>> getCategory(){
 		List<Category> mCategory = dao.findCategory();
 		return new ResponseEntity<List<Category>>(mCategory, null,HttpStatus.OK);
 	} 
 	
 	
-	@RequestMapping(value="/getQuestions/{L_id}",method =RequestMethod.GET)
+	@RequestMapping(value="getQuestions/{L_id}",method =RequestMethod.GET)
 	public ResponseEntity<Object>  getQuestions(@PathVariable("L_id") int id,HttpServletRequest  request) {
 		String header=request.getHeader("Accept");
 		
@@ -120,7 +120,9 @@ public class MyController {
 				e.printStackTrace();
 			}
 			System.out.println("the data is changed");
+			System.out.println("the data is changed");
 			return new ResponseEntity<Object>(obj.toString(),null,HttpStatus.NOT_ACCEPTABLE);
+		
 		}
 	}
 
