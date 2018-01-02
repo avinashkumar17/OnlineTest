@@ -7,3 +7,5 @@
 .metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/_b.cfs
 .metadata/.plugins/org.eclipse.m2e.core/nexus/830bc118332e77292949ed1e6d2fabe0/_a.cfs
 .metadata/.plugins/org.eclipse.pde.core/.local_targets/1514548201272.target
+/.metadata/
+/.recommenders/
