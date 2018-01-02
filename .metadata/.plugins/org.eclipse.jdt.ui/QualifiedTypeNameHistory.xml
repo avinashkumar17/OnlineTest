@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
+<qualifiedTypeNameHistroy/>
+=======
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -30,3 +33,4 @@
 >>>>>>> e4e8fdefd1c1bbe1aaf6ecac380b95378c9dc674
 >>>>>>> 79a3f0cddd7771442ae60b76eb9381c394217a5f
 </qualifiedTypeNameHistroy>
+>>>>>>> 68087f83858642da94825dae159ecd69bf9e8c2b
