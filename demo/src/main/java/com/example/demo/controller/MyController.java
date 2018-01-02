@@ -11,10 +11,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -123,5 +119,24 @@ public class MyController {
 			return new ResponseEntity<Object>(obj.toString(),null,HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
-
+	
+	@RequestMapping(value = "/getLevels/{l_id}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getLevels(@PathVariable("l_id") int id, HttpServletRequest httpServletRequest){
+		String header = httpServletRequest.getHeader("Accept");
+		if(header.equalsIgnoreCase("application/json")) {
+			List<Levels> lvl =  dao.showLevel(id);
+			return new ResponseEntity<Object>(lvl, null,HttpStatus.OK);
+		}else {
+			JSONObject jsonObj = new JSONObject();
+			try {
+				jsonObj.put("StatusCode", "406");
+				jsonObj.put("Message", "Return Type Not Accepted");
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return new ResponseEntity<Object>(jsonObj.toString(), null, HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+	
+	
 }

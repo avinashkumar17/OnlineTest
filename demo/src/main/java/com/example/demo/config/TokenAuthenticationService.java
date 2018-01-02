@@ -25,8 +25,8 @@ public class TokenAuthenticationService {
 	  static final String HEADER_STRING = "Authorization";
 	  static void addAuthentication(HttpServletResponse res,Authentication authresult) {
 		  List<GrantedAuthority> gt=(List<GrantedAuthority>) authresult.getAuthorities();  
-		  HashMap<String,Object> ht=new HashMap<String, Object>();
-		  ht.put("roles",gt.get(0).getAuthority());
+		 /* HashMap<String,Object> ht=new HashMap<String, Object>();
+		  ht.put("roles",gt.get(0).getAuthority());*/
 		  
 		  String j=gt.get(0).getAuthority();
 		  String JWT = Jwts.builder().claim("role",j)
@@ -35,6 +35,7 @@ public class TokenAuthenticationService {
 		        .signWith(SignatureAlgorithm.HS512, SECRET)
 		        .compact();
 		    res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		   
 		    
 		  }
 	  static Authentication getAuthentication(HttpServletRequest request) {

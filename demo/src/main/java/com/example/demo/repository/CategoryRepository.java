@@ -13,4 +13,5 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 
 	@Query(nativeQuery = true, value = "select * from category where id=?1")
 	public List<Category> findData(int id);
+	
 }
