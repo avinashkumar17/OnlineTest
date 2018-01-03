@@ -3,12 +3,14 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.AdminLogin;
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
+import com.example.demo.exception.UserAlreadyExist;
 import com.example.demo.repository.AdminRepository;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.LevelsRepository;
@@ -54,6 +56,17 @@ public class Impl implements Inter {
 	public List<Levels> showLevel(int id) {
 		// TODO Auto-generated method stub
 		return levelRepo.showLevel(id);
+	}
+
+	@Override
+	public String doSignUp(AdminLogin adminLogin) throws UserAlreadyExist{
+			List<AdminLogin> resp =adminrepo.findByUsernameandPhonenumber(adminLogin.getUsername(), adminLogin.getPhonenumber());	
+			if(resp.size()==0) {
+				adminrepo.save(adminLogin);
+				return "Successfully Registered";
+			}else {
+			 throw new UserAlreadyExist("User Already Exist");
+			}
 	}
 
 }

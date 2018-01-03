@@ -6,6 +6,7 @@ import com.example.demo.entity.AdminLogin;
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
+import com.example.demo.exception.UserAlreadyExist;
 
 public interface Inter {
 
@@ -18,5 +19,7 @@ public interface Inter {
 	public List<Questions> findLevel(Levels level);
 	
 	public List<Levels> showLevel(int id);
+	
+	public String doSignUp(AdminLogin adminLogin) throws UserAlreadyExist;
 
 }
