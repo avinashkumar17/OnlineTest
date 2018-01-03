@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
@@ -126,6 +127,8 @@ public class MyController {
 			return new ResponseEntity<Object>(jsonObj.toString(), null, HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
+	
+	
 	
 	
 }
