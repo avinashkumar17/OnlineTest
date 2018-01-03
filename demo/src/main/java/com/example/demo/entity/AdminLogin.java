@@ -5,14 +5,25 @@ import javax.persistence.*;
 @Entity
 @Table(name = "adminlogin")
 public class AdminLogin {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	
+	
 	private String username;
 	private String password;
 	private String role;
 	private int phonenumber;
 	private String email;
 
-	@Id
-	private int id;
+	@Override
+	public String toString() {
+		return "AdminLogin [username=" + username + ", password=" + password + ", role=" + role + ", phonenumber="
+				+ phonenumber + ", email=" + email + ", id=" + id + "]";
+	}
+
+	
 
 	public int getId() {
 		return id;
