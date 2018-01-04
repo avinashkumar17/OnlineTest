@@ -130,7 +130,6 @@ public class MyController {
 			return new ResponseEntity<Object>(new ResponseMessage(dbResponse, 200), null, HttpStatus.OK);
 		} catch (UserAlreadyExist e) {
 			throw new CustomException(e.getLocalizedMessage(),HttpStatus.CONFLICT);
-			
 		}
 		
 	}
