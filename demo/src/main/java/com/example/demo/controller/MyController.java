@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-<<<<<<< HEAD
-=======
+
+
 import com.example.demo.entity.AdminLogin;
->>>>>>> e702ca150d53060e2d835ffb98e7548a095cb0d2
+
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
@@ -138,15 +138,12 @@ public class MyController {
 		
 	}
 	
-<<<<<<< HEAD
-	
-	
-=======
 	@ExceptionHandler(CustomException.class)
 	public ResponseEntity<Object> getException(CustomException  ex){	
+		System.out.println("inside the CustomException");
 		return new ResponseEntity<Object>(new ResponseMessage(ex.getLocalizedMessage(),ex.getHttpStatus().value()), null,ex.getHttpStatus());
 		
 	}
 
->>>>>>> e702ca150d53060e2d835ffb98e7548a095cb0d2
+
 }
