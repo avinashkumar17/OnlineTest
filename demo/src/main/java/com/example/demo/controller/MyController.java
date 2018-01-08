@@ -97,9 +97,8 @@ public class MyController {
 		if (header.equalsIgnoreCase("application/json")) {
 			System.out.println("the header is " + header);
 
-			Levels level = new Levels();
-			level.setId(id);
-			List<Questions> ques = dao.findLevel(level);
+			
+			List<Questions> ques = dao.findLevel(id);
 			return new ResponseEntity<Object>(ques, null, HttpStatus.OK);
 		} else {
 			throw new CustomException("Return type not accepted",HttpStatus.NOT_ACCEPTABLE);

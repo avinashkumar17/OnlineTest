@@ -47,9 +47,9 @@ public class Impl implements Inter {
 	}
 
 	@Override
-	public List<Questions> findLevel(Levels level) {
+	public List<Questions> findLevel(int id) {
 		// TODO Auto-generated method stub
-		return questionRepo.findByLevel(level);
+		return questionRepo.findByLevelQuestion(id);
 	}
 
 	@Override
