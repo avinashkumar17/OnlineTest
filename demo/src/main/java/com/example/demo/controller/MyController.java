@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-
 import com.example.demo.entity.AdminLogin;
-
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Levels;
 import com.example.demo.entity.Questions;
@@ -77,7 +73,56 @@ public class MyController {
 		}
 		return "success";
 	}
+	
+	@RequestMapping(value="addCategory", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<List<Category>> addCategory(HttpServletRequest request, String category) throws CustomException {
+		String header = request.getHeader("Accept");
 
+		if (header.equalsIgnoreCase("application/json")) {
+		List<Category> resp = null;
+		if(category==null) {
+			resp = dao.findCategory();
+			return new ResponseEntity<List<Category>>(resp, null, HttpStatus.OK);	
+		}
+		boolean response = dao.addCategory(category);
+		if(!response) {
+			throw new CustomException("Error inserting Data",HttpStatus.INTERNAL_SERVER_ERROR);	
+		}else {
+			resp = dao.findCategory();
+		}
+		
+		return new ResponseEntity<List<Category>>(resp, null, HttpStatus.OK);
+		}else {
+			throw new CustomException("Return type not accepted",HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+
+	
+	@RequestMapping(value="removeCategory", method = RequestMethod.POST)
+	public @ResponseBody ResponseEntity<List<Category>> RemoveCategory(HttpServletRequest request, Integer category) throws CustomException {
+		String header = request.getHeader("Accept");
+		System.out.println("ID is "+category);
+		if (header.equalsIgnoreCase("application/json")) {
+		List<Category> resp = null;
+		if(category==null) {
+			resp = dao.findCategory();
+			return new ResponseEntity<List<Category>>(resp, null, HttpStatus.OK);	
+		}
+		boolean response = dao.removeCategory(category);
+		System.out.println("Resp is "+response);
+		if(!response) {
+			throw new CustomException("Error removing Data",HttpStatus.INTERNAL_SERVER_ERROR);	
+		}else {
+			resp = dao.findCategory();
+		}
+		
+		return new ResponseEntity<List<Category>>(resp, null, HttpStatus.OK);
+		}else {
+			throw new CustomException("Return type not accepted",HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+	
+	
 	@RequestMapping(value = "getCategory", method = RequestMethod.GET)
 	public ResponseEntity<List<Category>> getCategory(HttpServletRequest request) throws CustomException {
 		String header = request.getHeader("Accept");
@@ -143,6 +188,30 @@ public class MyController {
 		return new ResponseEntity<Object>(new ResponseMessage(ex.getLocalizedMessage(),ex.getHttpStatus().value()), null,ex.getHttpStatus());
 		
 	}
-
-
+	
+	@RequestMapping(value="editCategory", method = RequestMethod.POST)
+	public ResponseEntity<Object> editCategorybyValue(HttpServletRequest request,int id,String category) throws CustomException{
+		String header = request.getHeader("Accept");
+		if (header.equalsIgnoreCase("application/json")) {
+		dao.editValue(id, category);
+		return new ResponseEntity<Object>(new ResponseMessage("Success", 200), null, HttpStatus.OK);
+		}else {
+			throw new CustomException("Return type not accepted",HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+	
+	
+	@RequestMapping(value="test", method = RequestMethod.GET)
+	public ResponseEntity<List<Category>> test(HttpServletRequest request) throws CustomException{
+		//String header = request.getHeader("Accept");
+		//if (header.equalsIgnoreCase("application/json")) {
+		try {
+		List<Category> mCategory = dao.findCategory();
+		return new ResponseEntity<List<Category>>(mCategory, null, HttpStatus.OK);
+		}catch(Exception e) {
+		//}else {
+			throw new CustomException("Return type not accepted",HttpStatus.NOT_ACCEPTABLE);
+		}
+		//}
+	}
 }

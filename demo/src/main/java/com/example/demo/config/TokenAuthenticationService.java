@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class TokenAuthenticationService {
 	static final String HEADER_STRING = "Authorization";
 
 	static void addAuthentication(HttpServletResponse res,
-			Authentication authresult) {
+			Authentication authresult) throws IOException {
 		List<GrantedAuthority> gt = (List<GrantedAuthority>) authresult.getAuthorities();
 		HashMap<String, Object> ht = new HashMap<String, Object>();
 		ht.put("roles", gt.get(0).getAuthority());
@@ -38,6 +39,7 @@ public class TokenAuthenticationService {
 						new Date(System.currentTimeMillis() + EXPIRATIONTIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
 		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		res.getWriter().println("successfully logged in");
 
 	}
 

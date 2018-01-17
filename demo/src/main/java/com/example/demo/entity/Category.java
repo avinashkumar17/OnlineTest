@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,21 +8,33 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="category")
+@Table(name = "category")
 public class Category {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int Id;
-	
-	@Column(name="category")
+
+	@Column(name = "category")
 	private String Category;
-	
+
+	public Category() {
+
+		// TODO Auto-generated constructor stub
+	}
+	public Category(int id,String category) {
+		Id = id;
+		Category = category;
+	}
+
+	public Category(String category) {
+		Category = category;
+	}
+
 	@JsonIgnore
-	@OneToMany(mappedBy = "category",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@OneToMany(orphanRemoval = true, mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Levels> items = new ArrayList<Levels>();
-	
 
 	public List<Levels> getItems() {
 		return items;
@@ -48,5 +59,5 @@ public class Category {
 	public void setCategory(String category) {
 		Category = category;
 	}
-	
+
 }

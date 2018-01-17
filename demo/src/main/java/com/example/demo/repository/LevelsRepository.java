@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.example.demo.entity.Levels;
+import java.lang.String;
+import com.example.demo.entity.Category;
 
 public interface LevelsRepository extends JpaRepository<Levels, Long> {
-	
-	
+
 	@Query(nativeQuery = true, value = "select * from levels where l_id=?1")
 	public List<Levels> showLevel(int id);
-	
-	
+
 }
