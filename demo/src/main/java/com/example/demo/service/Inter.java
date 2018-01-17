@@ -16,7 +16,7 @@ public interface Inter {
 	
 	public List<Category> findCategory();
 	
-	public List<Questions> findLevel(Levels level);
+	public List<Questions> findLevel(int id);
 	
 	public List<Levels> showLevel(int id);
 	
