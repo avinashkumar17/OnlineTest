@@ -30,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST,"/signup")
 				.permitAll()
 				.antMatchers(HttpMethod.GET, "/getCategory")
-				.hasAuthority("student")
+				.hasAnyAuthority("student","admin")
 				.antMatchers(HttpMethod.GET, "/getQuestions/*")
 				.hasAuthority("student")
 				.antMatchers(HttpMethod.GET, "/getLevels/*")
