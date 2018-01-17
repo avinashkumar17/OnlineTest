@@ -21,5 +21,14 @@ public interface Inter {
 	public List<Levels> showLevel(int id);
 	
 	public String doSignUp(AdminLogin adminLogin) throws UserAlreadyExist;
+	
+	public boolean addCategory(String categoryName);
+	
+	public boolean removeCategory(int categoryId);
+	
+	public List<Category> findthree();
+	
+	public void editValue(int id, String category);
+	
 
 }
