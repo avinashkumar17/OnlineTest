@@ -15,9 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "levels")
-//@JsonIgnoreProperties(ignoreUnknown = true)
+// @JsonIgnoreProperties(ignoreUnknown = true)
 public class Levels {
 
 	@Id
@@ -28,13 +30,20 @@ public class Levels {
 	@Column(name = "level_category")
 	private String levelCategory;
 
-	//@JsonIgnore
+	public Levels() {
+	}
+
+	public Levels(int id) {
+		Id = id;
+	}
+
+	// @JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "l_id", referencedColumnName = "id")
 	private Category category;
 
-	//@JsonIgnore
-	@OneToMany(orphanRemoval=true,mappedBy = "level", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
+	@OneToMany(orphanRemoval = true, mappedBy = "level", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Questions> questionsItem = new ArrayList<Questions>();
 
 	public List<Questions> getQuestionsItem() {

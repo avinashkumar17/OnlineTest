@@ -100,13 +100,72 @@ public class Impl implements Inter {
 
 	@Override
 	public void editValue(int id, String category) {
-		
+
 		try {
-		repo.updateCategory(category, id);
-		}
-		catch(Exception e) {
-			
+			repo.updateCategory(category, id);
+		} catch (Exception e) {
+
 		}
 	}
+
+	@Override
+	public String addQuestion(Questions q) {
+		System.out.println("QID :" + q.getId() + " QQ :" + q.getQuestion() + " QA :" + q.getAnswer() + " CA :"
+				+ q.getChoice_a() + " CB :" + q.getChoice_b() + " CC :" + q.getChoice_c() + " CD :" + q.getChoice_d()
+				+ " LID :" + q.getLevel().getId());
+		try {
+			questionRepo.addQuestion(q.getQuestion(), q.getAnswer(), q.getChoice_a(), q.getChoice_b(),
+					q.getChoice_c(), q.getChoice_d(), q.getLevel().getId());
+			// questionRepo.save(q);
+		} catch (Exception e) {
+			System.out.println("Exception : " + e);
+			return e.getMessage();
+		}
+		return "success";
+	}
+
+	@Override
+	public String addLevel(Levels q) {
+		try {
+			levelRepo.addLevel(q.getCategory().getId(),q.getLevelCategory());
+			// questionRepo.save(q);
+		} catch (Exception e) {
+			System.out.println("Exception : " + e);
+			return e.getMessage();
+		}
+		return "Success";
+	}
+
+	@Override
+	public List<Levels> showAllLevel() {
+		// TODO Auto-generated method stub
+		return levelRepo.findAll();
+	}
+
+	@Override
+	public void editLevelValue(int id, String level) {
+		try {
+			levelRepo.updateLevel(level, id);
+		} catch (Exception e) {
+
+		}
+	}
+
+	@Override
+	public boolean removeLevel(int levelId) {
+		try {
+			Levels l = new Levels();
+			l.setId(levelId);
+			//Questions c = new Questions();
+			//c.setLevel(l);
+		//	questionRepo.delete(c);
+			levelRepo.delete(l);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	
 
 }

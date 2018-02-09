@@ -26,9 +26,18 @@ public interface Inter {
 	
 	public boolean removeCategory(int categoryId);
 	
+	public boolean removeLevel(int levelId);
+	
 	public List<Category> findthree();
 	
 	public void editValue(int id, String category);
 	
-
+	public void editLevelValue(int id, String level);
+	
+	public String addQuestion(Questions q);
+	
+	public String addLevel(Levels q);
+	
+	public List<Levels> showAllLevel();
+	
 }

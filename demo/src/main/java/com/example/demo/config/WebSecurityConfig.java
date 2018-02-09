@@ -30,19 +30,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.POST,"/signup")
 				.permitAll()
 				.antMatchers(HttpMethod.POST,"/addCategory")
-				.permitAll()
+				.hasAnyAuthority("admin")
 				.antMatchers(HttpMethod.POST,"/removeCategory")
-				.permitAll()
+				.hasAnyAuthority("admin")
 				.antMatchers(HttpMethod.POST,"/editCategory")
-				.permitAll()
+				.hasAnyAuthority("admin")
 				.antMatchers(HttpMethod.GET, "/getCategory")
-				.permitAll()
-				.antMatchers(HttpMethod.GET, "/test")
+				.hasAnyAuthority("student","admin")
+				.antMatchers(HttpMethod.POST, "/addQuestion")
 				.permitAll()
 				.antMatchers(HttpMethod.GET, "/getQuestions/*")
 				.hasAnyAuthority("student","admin")
 				.antMatchers(HttpMethod.GET, "/getLevels/*")
 				.hasAnyAuthority("student","admin")
+				.antMatchers(HttpMethod.POST, "/addLevels")
+				.hasAuthority("admin")
+				.antMatchers(HttpMethod.GET, "/getAllLevels")
+				.hasAuthority("admin")
 				.anyRequest()
 				.authenticated()
 				.and()
@@ -65,5 +69,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(user);
 
 	}
+	
 
 }

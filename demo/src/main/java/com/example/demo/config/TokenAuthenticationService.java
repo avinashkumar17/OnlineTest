@@ -24,19 +24,14 @@ public class TokenAuthenticationService {
 	static final String TOKEN_PREFIX = "Bearer";
 	static final String HEADER_STRING = "Authorization";
 
-	static void addAuthentication(HttpServletResponse res,
-			Authentication authresult) throws IOException {
+	static void addAuthentication(HttpServletResponse res, Authentication authresult) throws IOException {
 		List<GrantedAuthority> gt = (List<GrantedAuthority>) authresult.getAuthorities();
-		HashMap<String, Object> ht = new HashMap<String, Object>();
-		ht.put("roles", gt.get(0).getAuthority());
+		// HashMap<String, Object> ht = new HashMap<String, Object>();
+		// ht.put("roles", gt.get(0).getAuthority());
 
 		String j = gt.get(0).getAuthority();
-		String JWT = Jwts
-				.builder()
-				.claim("role", j)
-				.setSubject(authresult.getName())
-				.setExpiration(
-						new Date(System.currentTimeMillis() + EXPIRATIONTIME))
+		String JWT = Jwts.builder().claim("role", j).setSubject(authresult.getName())
+				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
 		res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
 		res.getWriter().println("successfully logged in");
@@ -47,16 +42,13 @@ public class TokenAuthenticationService {
 		String token = request.getHeader(HEADER_STRING);
 		if (token != null) {
 			// parse the token.
-			String user = Jwts.parser().setSigningKey(SECRET)
-					.parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody()
+			String user = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody()
 					.getSubject();
-			Claims s = Jwts.parser().setSigningKey(SECRET)
-					.parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody();
+			Claims s = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token.replace(TOKEN_PREFIX, "")).getBody();
 			String role = (String) s.get("role");
 
 			System.out.println("user is " + role);
-			return user != null ? new UsernamePasswordAuthenticationToken(user,
-					null, getAuthRole(role)) : null;
+			return user != null ? new UsernamePasswordAuthenticationToken(user, null, getAuthRole(role)) : null;
 		}
 		return null;
 	}

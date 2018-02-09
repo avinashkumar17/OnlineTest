@@ -40,7 +40,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 			HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		System.out.println("the ***************** success response");
+		System.out.println("the ***************** response "+response.toString());
 		TokenAuthenticationService.addAuthentication(response, authResult);
 
 	}

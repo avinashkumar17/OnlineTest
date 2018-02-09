@@ -5,12 +5,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "adminlogin")
 public class AdminLogin {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	
+
 	private String username;
 	private String password;
 	private String role;
@@ -22,8 +21,6 @@ public class AdminLogin {
 		return "AdminLogin [username=" + username + ", password=" + password + ", role=" + role + ", phonenumber="
 				+ phonenumber + ", email=" + email + ", id=" + id + "]";
 	}
-
-	
 
 	public int getId() {
 		return id;
@@ -56,8 +53,6 @@ public class AdminLogin {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-	
 
 	public int getPhonenumber() {
 		return phonenumber;

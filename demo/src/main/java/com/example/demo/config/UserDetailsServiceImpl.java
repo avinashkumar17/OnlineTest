@@ -21,15 +21,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	Inter dao;
 
 	@Override
-	public UserDetails loadUserByUsername(String arg0)
-			throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String arg0) throws UsernameNotFoundException {
 		List<AdminLogin> kk = dao.getAdminDetails(arg0);
 		if (kk.size() == 0) {
 			throw new UsernameNotFoundException(arg0);
 		}
 		// TODO Auto-generated method stub
-		return new User(kk.get(0).getUsername(), kk.get(0).getPassword(),
-				getAuthRole(kk.get(0).getRole()));
+		return new User(kk.get(0).getUsername(), kk.get(0).getPassword(), getAuthRole(kk.get(0).getRole()));
 	}
 
 	private static List<GrantedAuthority> getAuthRole(String role) {

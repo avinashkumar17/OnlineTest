@@ -20,9 +20,8 @@ public class Category {
 	private String Category;
 
 	public Category() {
-
-		// TODO Auto-generated constructor stub
 	}
+		
 	public Category(int id,String category) {
 		Id = id;
 		Category = category;
